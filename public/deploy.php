@@ -45,7 +45,7 @@ foreach($commands AS $command){
  |___==___|  /              &copy; oodavid 2012 |
               |____________________________|
 
-    <?php echo $output; ?>
+<?php echo $output; ?>
 </pre>
 </body>
 </html>
