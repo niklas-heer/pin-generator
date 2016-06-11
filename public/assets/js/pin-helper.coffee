@@ -1,8 +1,11 @@
+isNumeric = (num) ->
+  !isNaN(num)
+
 calcNum = (x, y) ->
   if (x - y) >= 0 then (x - y) else (x - y) + 10
 
 clacEncPin = (pin, secret) ->
-  if pin.length is secret.length and pin.length >= 4
+  if pin.length is secret.length and pin.length >= 4 and isNumeric(pin) and isNumeric(secret)
 
     results = []
     i = 0
