@@ -15,15 +15,13 @@
   };
 
   clacEncPin = function(pin, secret) {
-    var i, results, x, y;
-    if (pin.length === secret.length && pin.length >= 4 && isNumeric(pin) && isNumeric(secret)) {
+    var i, j, ref, results, x, y;
+    if ((pin.length === secret.length && pin.length >= 4) && (isNumeric(pin) && isNumeric(secret))) {
       results = [];
-      i = 0;
-      while (i < pin.length) {
+      for (i = j = 0, ref = pin.length - 1; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
         x = parseInt(pin[i]);
         y = parseInt(secret[i]);
         results.push(calcNum(x, y));
-        ++i;
       }
       $('#enc_pin').parent().removeClass("hidden");
       $('#enc_pin').parent().addClass("is-dirty is-focused");
